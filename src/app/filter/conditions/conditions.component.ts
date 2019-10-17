@@ -26,8 +26,10 @@ export class ConditionsComponent implements OnInit {
     this.filterService.getFilterConditions();
   }
 
-  setActive(id: string ) {
+  setActive(id: string, selected: boolean ) {
     this.filterService.toggleActiveState(id);
   }
+
+
 
 }

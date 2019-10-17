@@ -19,14 +19,10 @@ export class FilterService {
           this.conditionStore.set(data.entities.providers);
           this.userDetailsStore.set(data.entities.userDetails)
       });
-    
   }
 
   toggleActiveState(id: string) {
     this.conditionStore.toggleActive(id);
   }
-
-
-  
 
 }

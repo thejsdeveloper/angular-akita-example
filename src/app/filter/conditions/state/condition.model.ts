@@ -5,3 +5,8 @@ export type Condition = {
   name: string;
   userDetails: UserDetails[];
 };
+
+export type ConditionUI = {
+  code: string[];
+  uniqueUserDetails: string[];
+}

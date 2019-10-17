@@ -27,9 +27,9 @@ export class UserDetailsQuery extends QueryEntity<UserDetailsState, UserDetails>
       auditTime(0),
       map(([userDetails, detailsCode])=> {
           return userDetails.filter(detail => detailsCode.includes(detail.code))
-      }),
+      })
       // tap( data => console.log(data)),
-       distinctUntilChanged((prev: UserDetails, curr: UserDetails) => prev.code !== curr.code)
+      // distinctUntilChanged((prev: UserDetails, curr: UserDetails) => prev.code !== curr.code)
     )
   }
 
