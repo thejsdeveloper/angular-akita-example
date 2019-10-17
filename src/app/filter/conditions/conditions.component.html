@@ -5,7 +5,8 @@
       <div class="col-3 d-flex flex-row align-items-center "
        *ngFor="let condition of condition$ | async">
       
-      <input type="checkbox" [attr.id]="condition.name"> <span class="pl-2">{{condition.name}}</span>
+      <input type="checkbox" [attr.id]="condition.name" (click)="setActive($event.target.checked, condition.name )"> 
+      <span class="pl-2">{{condition.name}}</span>
     
     </div>
    </div>

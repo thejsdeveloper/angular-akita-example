@@ -5,8 +5,10 @@ import { UserDetailsComponent } from "./user-details/user-details.component";
 import { FilterService } from "./filter.service";
 import { FilterDataService } from "./filter-data.service";
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   declarations: [ConditionsComponent, UserDetailsComponent],
   providers: [FilterService, FilterDataService],
   exports: [ConditionsComponent, UserDetailsComponent]
