@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, from } from 'rxjs';
 
 
@@ -9,7 +9,8 @@ import { ConditionQuery } from './state/condition.query';
 @Component({
   selector: 'app-conditions',
   templateUrl: './conditions.component.html',
-  styleUrls: ['./conditions.component.css']
+  styleUrls: ['./conditions.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ConditionsComponent implements OnInit {
   condition$: Observable<Condition[]>;
