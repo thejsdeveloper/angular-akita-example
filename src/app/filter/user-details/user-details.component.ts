@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDetailsQuery } from './state/user-details.query';
 
 @Component({
   selector: 'app-user-details',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userDetailsQuery: UserDetailsQuery) { }
 
   ngOnInit() {
+
+    this.userDetailsQuery.getUserDetails().subscribe(data => console.log('userDetails -->', data));
   }
 
 }

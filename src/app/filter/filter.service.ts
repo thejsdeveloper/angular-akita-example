@@ -22,14 +22,11 @@ export class FilterService {
     
   }
 
-  setActiveContions(id: string) {
-    this.conditionStore.addActive(id);
-  }
-
-  removeActiveContions(id: string) {
-    this.conditionStore.removeActive(id);
+  toggleActiveState(id: string) {
+    this.conditionStore.toggleActive(id);
   }
 
 
+  
 
 }

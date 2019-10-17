@@ -7,9 +7,6 @@ import { Condition } from './condition.model';
 export interface ConditionState extends EntityState<Condition>,  MultiActiveState {}
 
 const initialState = {
-  ui: {
-    selected: false
-  },
   active: []
 };
 
