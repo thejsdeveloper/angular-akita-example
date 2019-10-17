@@ -1,8 +1,8 @@
 <div class="card">
 	<div class="card-header">Service Provider</div>
   <div class="card-body">
-    <div class="col-3">
-      <input type="checkbox"> Test
+    <div class="col-3" *ngFor="let condition of condition$ | async">
+      <input type="checkbox"> {{condition.name}}
     </div>
   </div>
 </div>

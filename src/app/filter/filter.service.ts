@@ -16,10 +16,9 @@ export class FilterService {
   getFilterConditions() {
     this.filterDataService.getFilterData().subscribe(
       data => {
-          console.log(data)
           this.conditionStore.set(data.entities.providers);
           this.userDetailsStore.set(data.entities.userDetails)
-      })
+      });
     
   }
 
