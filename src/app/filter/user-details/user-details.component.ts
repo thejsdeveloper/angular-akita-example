@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, state, style, transition, animate, query, stagger } from '@angular/animations';
 
 import { UserDetailsQuery } from "./state/user-details.query";
 import { Observable } from "rxjs";
@@ -15,7 +15,15 @@ import { UserDetails } from "./state/user-details.model";
     state('void', style({
       opacity: 0
     })),
-    transition('void<=> *', animate(1000))
+    transition('* <=> *', [
+      animate(500),
+      query(':enter', [
+          style({ opacity: 0 }),
+          stagger(100, [
+            animate('1s', style({ opacity: 1 }))
+          ])
+        ], { optional: true })
+    ])
   ])]
 })
 export class UserDetailsComponent implements OnInit {

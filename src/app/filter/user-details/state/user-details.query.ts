@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { QueryEntity } from '@datorama/akita';
 import { combineLatest } from 'rxjs';
-import { map, auditTime } from 'rxjs/operators';
+import { map, auditTime, distinctUntilChanged, tap } from 'rxjs/operators';
 
 import { UserDetails } from './user-details.model';
 import { ConditionQuery } from '../../conditions/state/condition.query';
@@ -27,7 +27,9 @@ export class UserDetailsQuery extends QueryEntity<UserDetailsState, UserDetails>
       auditTime(0),
       map(([userDetails, detailsCode])=> {
           return userDetails.filter(detail => detailsCode.includes(detail.code))
-      })
+      }),
+      // tap( data => console.log(data)),
+       distinctUntilChanged((prev: UserDetails, curr: UserDetails) => prev.code !== curr.code)
     )
   }
 
