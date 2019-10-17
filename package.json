@@ -11,6 +11,7 @@
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
     "@datorama/akita": "^4.10.8",
+    "@datorama/akita-ngdevtools": "^3.0.2",
     "core-js": "2",
     "normalizr": "^3.4.1",
     "rxjs": "^6.5.2",
