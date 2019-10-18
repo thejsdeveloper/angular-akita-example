@@ -7,6 +7,5 @@ export type Condition = {
 };
 
 export type ConditionUI = {
-  code: string[];
-  uniqueUserDetails: string[];
+  userDetails: string[];
 }
