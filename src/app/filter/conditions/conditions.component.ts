@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Observable, combineLatest } from "rxjs";
-import { combineQueries } from '@datorama/akita';
 import { filter, map, tap, auditTime} from "rxjs/operators";
 import { untilDestroyed } from 'ngx-take-until-destroy';
 import { FilterService } from "../../filter/filter.service";
@@ -42,7 +41,7 @@ export class ConditionsComponent implements OnInit {
       this.conditionQuery.ui.selectAll().pipe(map((data: string[]) => data.flat()))
     ).pipe(untilDestroyed(this)).subscribe(
       ([activeUserDetails, storedUserDetails]: [string[], string[]]) => {
-        console.log('update UI Store')
+        
         if (activeUserDetails.length !== storedUserDetails.length) {
           
           this.filterService.updateUIStore(activeUserDetails);
