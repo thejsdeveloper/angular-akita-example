@@ -13,7 +13,7 @@ export const filterData = [
       },
       {
         code: "address",
-        name: "Adress"
+        name: "Address"
       },
       {
         code: "country",
@@ -35,7 +35,7 @@ export const filterData = [
       },
       {
         code: "address",
-        name: "Adress"
+        name: "Address"
       },
       {
         code: "country",
@@ -57,7 +57,7 @@ export const filterData = [
       },
       {
         code: "address",
-        name: "Adress"
+        name: "Address"
       }
     ]
   }
