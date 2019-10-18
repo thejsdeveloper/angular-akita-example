@@ -17,7 +17,6 @@ export class FilterService {
 
   getFilterConditions() {
     if (!this.conditionQuery.getHasCache()) {
-      
       this.filterDataService.getFilterData().subscribe(data => {
         this.conditionStore.set(data.entities.providers);
         this.userDetailsStore.set(data.entities.userDetails);
