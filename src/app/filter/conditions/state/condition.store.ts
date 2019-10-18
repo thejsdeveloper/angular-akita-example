@@ -17,6 +17,6 @@ export class ConditionStore extends EntityStore<ConditionState, Condition> {
 
   constructor() {
     super(initialState);
-    this.createUIStore();
+    this.createUIStore({}, {  resettable: true });
   }
 }

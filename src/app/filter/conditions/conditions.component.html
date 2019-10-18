@@ -6,7 +6,7 @@
        *ngFor="let condition of condition$ | async">
       
       <input type="checkbox" [attr.id]="condition.name" 
-      (click)="setActive(condition.code, $event.target.checked)"> 
+      (click)="setActive(condition.code)"> 
       <span class="pl-2">{{condition.name}}</span>
     
     </div>

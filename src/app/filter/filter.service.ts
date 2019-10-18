@@ -22,6 +22,11 @@ export class FilterService {
     this.conditionStore.toggleActive(id);
   }
 
+  reset() {
+    this.conditionStore.setActive([]);
+    this.conditionStore.ui.reset();
+  }
+
   updateUIStore(userDetails: string[]) {
     this.conditionStore.ui.set( {
       userDetails

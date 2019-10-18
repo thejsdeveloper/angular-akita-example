@@ -6,14 +6,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { FilterModule } from './filter/filter.module';
-import { AkitaNgDevtools } from '@datorama/akita-ngdevtools'
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { ServicesComponent } from './services/services.component'
 
 
 const routes: Routes = [ {
   path: '', redirectTo: 'home', pathMatch: 'full'
 }, {
   path: 'home',
-  loadChildren: () => import('./app/filter/filer.module').then(module => module.FilterModule)
+  loadChildren: () => import('./filter/filter.module').then(module => module.FilterModule)
+}, {
+  path: 'services', 
+  component: ServicesComponent
 }]
 
 @NgModule({
@@ -24,7 +28,7 @@ const routes: Routes = [ {
     BrowserAnimationsModule,
     RouterModule.forRoot(routes)
     ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ServicesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
