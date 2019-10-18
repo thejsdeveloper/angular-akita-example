@@ -33,9 +33,9 @@ export class ConditionsComponent implements OnInit {
   updateUIStore() {
  
     combineLatest(
-      this.conditionQuery
-        .getActiveUserDetails()
+      this.conditionQuery.getActiveUserDetails()
         .pipe(filter((data: string[]) => !!data.length)),
+
       this.conditionQuery.ui
         .selectAll()
         .pipe(map((data: string[]) => data.flat()))
@@ -43,15 +43,11 @@ export class ConditionsComponent implements OnInit {
       ([activeUserDetails, storedUserDetails]: [string[], string[]]) => {
 
         if (activeUserDetails.length !== storedUserDetails.length) {
+          
           this.filterService.updateUIStore(activeUserDetails);
-        } else {
-          let isDifferent = !!this.filterService.difference(
-            activeUserDetails,
-            storedUserDetails
-          ).length;
-          if (isDifferent) {
+
+        } else if(this.filterService.isDifferent(activeUserDetails, storedUserDetails)){
             this.filterService.updateUIStore(activeUserDetails);
-          }
         }
       }
     );

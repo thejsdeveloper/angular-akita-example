@@ -32,4 +32,8 @@ export class FilterService {
     const s = new Set(b);
     return a.filter(x => !s.has(x));
   }
+
+  isDifferent(a: string[], b: string[]) {
+    return !!this.difference(a, b).length;
+  }
 }
